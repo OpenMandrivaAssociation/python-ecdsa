@@ -1,2 +1,4 @@
+removed_sources:
+  ecdsa-0.11.tar.gz: f732f8cdb064bbe47aa830cc2654688da95b78f0
 sources:
-  "ecdsa-0.11.tar.gz": f732f8cdb064bbe47aa830cc2654688da95b78f0
+  ecdsa-0.13.tar.gz: 7bcf6d1773d08bcc4bdd28cd05c545969f5aa162

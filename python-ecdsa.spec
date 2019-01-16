@@ -1,8 +1,8 @@
 %define pypi_name ecdsa
 
 Name:           python-ecdsa
-Version:        0.11
-Release:        6
+Version:        0.13
+Release:        1
 Group:          Development/Python
 Summary:        ECDSA cryptographic signature library (pure python)
 
@@ -46,7 +46,7 @@ pushd python2
 python2 setup.py build
 popd
 pushd python3
-python3 setup.py build
+%py3_build
 popd
 
 %install
@@ -59,8 +59,8 @@ popd
 
 %files -n python2-%{pypi_name}
 %doc python2/README.md python2/LICENSE
-%{python2_sitelib}/%{pypi_name}*
+%{py_puresitedir}/%{pypi_name}*
 
 %files
 %doc python3/README.md python3/LICENSE
-%{python3_sitelib}/%{pypi_name}*
+%{py3_puresitedir}/%{pypi_name}*
