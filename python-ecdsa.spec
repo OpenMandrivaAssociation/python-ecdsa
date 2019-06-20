@@ -1,7 +1,7 @@
 %define pypi_name ecdsa
 
 Name:           python-ecdsa
-Version:        0.11
+Version:	0.13.2
 Release:        6
 Group:          Development/Python
 Summary:        ECDSA cryptographic signature library (pure python)
