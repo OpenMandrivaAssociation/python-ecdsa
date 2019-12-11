@@ -2,7 +2,7 @@
 
 Name:           python-ecdsa
 Version:	0.13.3
-Release:	1
+Release:	2
 Group:          Development/Python
 Summary:        ECDSA cryptographic signature library (pure python)
 
