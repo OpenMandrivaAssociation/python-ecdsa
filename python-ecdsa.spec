@@ -13,6 +13,8 @@ BuildArch:      noarch
 
 BuildRequires:  python2-devel
 BuildRequires:  python3-devel
+BuildRequires:  python-setuptools
+BuildRequires:  python2-setuptools
 
 
 %description
