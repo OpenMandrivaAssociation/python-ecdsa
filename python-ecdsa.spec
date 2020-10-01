@@ -1,14 +1,14 @@
 %define pypi_name ecdsa
 
 Name:           python-ecdsa
-Version:	0.15
+Version:	0.16.0
 Release:	1
 Group:          Development/Python
 Summary:        ECDSA cryptographic signature library (pure python)
 
 License:        MIT
 URL:            http://github.com/warner/python-ecdsa
-Source0:	https://files.pythonhosted.org/packages/e3/7c/b508ade1feb47cd79222e06d85e477f5cfc4fb0455ad3c70eb6330fc49aa/ecdsa-0.15.tar.gz
+Source0:	https://files.pythonhosted.org/packages/23/c3/81b0040f2976775d6685c3bb3748355bb2b725a9210a4ea50afc5a90e7d9/ecdsa-0.16.0.tar.gz
 BuildArch:      noarch
 
 BuildRequires:  python2-devel
