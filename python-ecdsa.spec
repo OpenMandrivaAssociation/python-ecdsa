@@ -1,22 +1,25 @@
-%define pypi_name ecdsa
+%define module ecdsa
 
-Name:           python-ecdsa
-Version:	0.19.0
-Release:	3
-Group:          Development/Python
-Summary:        ECDSA cryptographic signature library (pure python)
-
-License:        MIT
-URL:            https://github.com/warner/python-ecdsa
-Source0:	https://files.pythonhosted.org/packages/source/e/ecdsa/ecdsa-%{version}.tar.gz
-BuildArch:      noarch
+Name:		python-ecdsa
+Version:	0.19.1
+Release:	1
+License:	MIT
+Summary:	Pure python ECDSA signature/verification and ECDH key agreement
+Group:		Development/Python
+URL:		https://github.com/tlsfuzzer/python-ecdsa
+Source0:	%{URL}/archive/%{name}-%{version}/%{name}-%{version}.tar.gz
 
 BuildSystem:	python
-BuildRequires:  python3-devel
-BuildRequires:  python-setuptools
+BuildArch:	noarch
+BuildRequires:	pkgconfig(python)
+BuildRequires:	python%{pyver}dist(pip)
+BuildRequires:	python%{pyver}dist(setuptools)
+BuildRequires:	python%{pyver}dist(six)
+BuildRequires:	python%{pyver}dist(wheel)
+Recommends:	python%{pyver}dist(gmpy2)
 
 # Not really, but let's get rid of py2 cruft
-Obsoletes:	python2-%{pypi_name} < %{EVRD}
+Obsoletes:	python2-%{module} < %{EVRD}
 
 %description
 This is an easy-to-use implementation of ECDSA cryptography
@@ -26,6 +29,16 @@ keypairs (signing key and verifying key), sign messages, and verify the
 signatures. The keys and signatures are very short, making them easy to
 handle and incorporate into other protocols.
 
+%prep -a
+# Remove bundled egg-info
+rm -rf src/%{module}.egg-info
+
+%build -a
+# Remove shebang from all non executable files
+find ./ -type f -name "*.py" -perm 644 -exec sed -i -e '1{\@^#! %{_bindir}/env python@d}' {} \;
+
 %files
-%doc README.md LICENSE
-%{python3_sitelib}/%{pypi_name}*
+%doc README.md
+%license LICENSE
+%{python3_sitelib}/%{module}
+%{python3_sitelib}/%{module}-%{version}*.*-info
