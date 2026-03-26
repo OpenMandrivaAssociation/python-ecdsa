@@ -1,7 +1,7 @@
 %define module ecdsa
 
 Name:		python-ecdsa
-Version:	0.19.1
+Version:	0.19.2
 Release:	1
 License:	MIT
 Summary:	Pure python ECDSA signature/verification and ECDH key agreement
