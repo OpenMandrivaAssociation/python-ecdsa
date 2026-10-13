@@ -2,7 +2,7 @@
 
 Name:		python-ecdsa
 Version:	0.19.2
-Release:	1
+Release:	2
 License:	MIT
 Summary:	Pure python ECDSA signature/verification and ECDH key agreement
 Group:		Development/Python
@@ -11,7 +11,7 @@ Source0:	%{URL}/archive/%{name}-%{version}/%{name}-%{version}.tar.gz
 
 BuildSystem:	python
 BuildArch:	noarch
-BuildRequires:	pkgconfig(python)
+BuildRequires:	pkgconfig(python3)
 BuildRequires:	python%{pyver}dist(pip)
 BuildRequires:	python%{pyver}dist(setuptools)
 BuildRequires:	python%{pyver}dist(six)
